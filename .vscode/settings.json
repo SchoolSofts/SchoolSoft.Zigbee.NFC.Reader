@@ -1,0 +1,9 @@
+{
+	"nrf-connect.topdir": "${nrf-connect.sdk:2.5.2}",
+	"nrf-connect.applications": ["${workspaceFolder}\\Reader"],
+	"cmake.sourceDirectory": "F:/project/Katyara11/SchoolSoft.Zigbee.NFC.Reader/Reader",
+	"C_Cpp.errorSquiggles": "disabled",
+	"files.associations": {
+		"kernel.h": "c"
+	}
+}
