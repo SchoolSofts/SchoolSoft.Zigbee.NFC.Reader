@@ -411,3 +411,5 @@ FodyWeavers.xsd
 *.sln.iml
 
 .vscode/settings.json
+Reader/src/main.c
+Reader/prj.conf
