@@ -16,28 +16,27 @@ void setup(void)
 {
   Serial.begin(115200);
   zigBeeSerial.begin(9600);
-  
+
   Serial.println("System initialized");
   nfc.begin();
 }
 
 void loop()
 {
-  readNFC();
-}
-
-void readNFC()
-{
   if (nfc.tagPresent())
   {
     NfcTag tag = nfc.read();
-    tag.print();
-    tagId = tag.getUidString();
-    
-    digitalWrite(13, HIGH);
-    delay(1000);
-    digitalWrite(13, LOW);
-    
-    zigBeeSerial.println(tagId);
+
+    if (tagId != tag.getUidString())
+    {
+      tag.print();
+      tagId = tag.getUidString();
+
+      digitalWrite(13, HIGH);
+      delay(1000);
+      digitalWrite(13, LOW);
+
+      zigBeeSerial.println(tagId);
+    }
   }
 }
