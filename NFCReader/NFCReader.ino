@@ -15,7 +15,7 @@ byte nuidPICC[4];
 void setup(void)
 {
   Serial.begin(115200);
-  zigBeeSerial.begin(9600);
+  zigBeeSerial.begin(115200);
 
   Serial.println("System initialized");
   nfc.begin();
